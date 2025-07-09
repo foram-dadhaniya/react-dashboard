@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 export const Concepts: React.FC = () => {
-    const [isHover, setIsHover] = useState(true);
+    const [isHover, setIsHover] = useState(false);
     return(
         <div className="concepts">
             <p onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>Covered concepts</p>
