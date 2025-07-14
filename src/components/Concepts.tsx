@@ -9,6 +9,7 @@ export const Concepts: React.FC = () => {
                 <ul className="conceptsBlock list-unstyled text-start">
                     <li>Formik</li>
                     <li>Yup Validation</li>
+                    <li>useNavigate</li>
                 </ul>
                 }
         </div>

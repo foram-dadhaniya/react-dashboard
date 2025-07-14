@@ -1,6 +1,6 @@
 import { useField } from "formik";
 
-import { InputField, InputLabel, InputGroup } from "../../features/auth/SignIn.styles";
+import { InputField, InputLabel, InputGroup } from "../../features/auth/Auth.styles";
 
 interface TextInputProps {
     label: string,
