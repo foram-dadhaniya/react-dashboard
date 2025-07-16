@@ -5,6 +5,7 @@ import { TextInput } from "../../components/form/TextInput";
 import { PageWapper, FormWrapper, Button } from "./Auth.styles";
 import { Concepts } from "../../components/Concepts";
 import { useNavigate } from "react-router-dom";
+import { ThemeToggle } from "../../components/theme/ThemeToggle";
 
 interface LoginFormValues {
     email: string,
@@ -31,6 +32,7 @@ export const SignIn: React.FC = () => {
 
     return (
         <PageWapper>
+            <ThemeToggle/>
             <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
                 <FormWrapper>
                     <Form>

@@ -9,9 +9,18 @@ export const GlobalStyles = createGlobalStyle`
   body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    background: #00020a;
   }
 
+  body.light-theme {
+    background-color: #0000;
+    color: black;
+  }
+
+  body.dark-theme {
+    background-color: #00020a;
+    color: white;
+  }
+    
   a {
     text-decoration: none;
     color: inherit;

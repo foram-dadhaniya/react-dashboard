@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const PageWapper = styled.div`
-    background: #00020a;
     height: 100vh;
     display:flex;
     justify-content: center;

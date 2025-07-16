@@ -8,17 +8,23 @@ import { Users } from './pages/Users';
 import { Projects } from './pages/Projects';
 import { Tasks } from './pages/Tasks';
 import { Layout } from './components/layout/Layout';
-
+import { useTheme } from './contenxt/useTheme';
+import { useEffect } from 'react';
 
 function App() {
+  const {state} = useTheme();
+  const theme = state.theme;
+
+  useEffect(() => {
+    document.body.className = `${theme}-theme`
+  }, [theme] );
   return (
-    <BrowserRouter>
+      <BrowserRouter>
       <GlobalStyles />
       <Routes>
         <Route path='/' element={<Navigate to="/signup" />} />
         <Route path='/signup' element={<SignUp/>} ></Route>
         <Route path='/signin' element={<SignIn/>} ></Route>
-
         <Route path='/' element={<Layout/>} >
           <Route path='/dashboard' element={<Dashboard/>}></Route>
           <Route path='/users' element={<Users/>}></Route>
