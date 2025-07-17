@@ -4,6 +4,7 @@ export interface UserInputValues {
     email: string,
     birthdate: string,
     number: string,
+    
 }
 
 export interface ProjectInputValues {

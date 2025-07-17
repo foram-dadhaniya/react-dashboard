@@ -1,13 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Formik, FormikHelpers, Form } from "formik";
 import { TextInput } from "../../components/form/TextInput";
 import { Button } from "../auth/Auth.styles";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../app/store";
 import { UserInputValues } from "../../types/types";
-import { addUser, deleteUser, editUser } from "./usersSlice";
-import { v4 as uuidv4 } from 'uuid';
-
+import { addUserToFirebase, fetchUsersFromFirebase, editUserToFirebase, deleteUserToFirebase } from "./usersSlice";
+import { toast } from "react-toastify";
 
 export const UserList: React.FC = () => {
   const [editingUser, setEditingUser] = useState<UserInputValues | null>(null);
@@ -21,15 +20,19 @@ export const UserList: React.FC = () => {
     number: "",
   };
 
+  useEffect(() => {
+    dispatch(fetchUsersFromFirebase());
+  }, [dispatch]);
+
   const handleUserSubmit = (
     values: UserInputValues,
     actions: FormikHelpers<UserInputValues>
   ) => {
     if(editingUser){
-        dispatch(editUser(values));
+        dispatch(editUserToFirebase(values));
         setEditingUser(null);
     } else {
-        dispatch(addUser({...values, id: uuidv4()}));
+        dispatch(addUserToFirebase({...values}));
     }  
     actions.resetForm();
   };
@@ -77,7 +80,9 @@ export const UserList: React.FC = () => {
                     <td>{user.birthdate}</td>
                     <td>{user.number}</td>
                     <td onClick={() => setEditingUser(user)}>Edit</td>
-                    <td onClick={() => dispatch(deleteUser(user.id))}>Delete</td>
+                    <td onClick={() => dispatch(deleteUserToFirebase(user.id)).unwrap()
+  .then(() => toast.success("User deleted successfully"))
+  .catch((err) => toast.error(err))}>Delete</td>
                   </tr>
                 ))}
               </tbody>

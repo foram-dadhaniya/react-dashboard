@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css'; 
+import { ToastContainer } from "react-toastify";
 import { GlobalStyles } from "./styles/theme/globalStyles";
 import { SignIn } from './features/auth/SignIn';
 import { Dashboard } from './pages/Dashboard';
@@ -32,6 +33,14 @@ function App() {
           <Route path='/tasks' element={<Tasks/>}></Route>
         </Route>
       </Routes>
+      <ToastContainer 
+        position="top-right" 
+        autoClose={3000} 
+        hideProgressBar={false} 
+        newestOnTop 
+        closeOnClick 
+        pauseOnHover 
+      />
     </BrowserRouter>
   );
 }
