@@ -16,6 +16,7 @@ export const GlobalStyles = createGlobalStyle`
     --card-title-color: #222f36;
     --card-border-color: #e6eff1;
     --table-bg: #fff;
+    --concept-block-bg: #19181a;
   }
 
   body[data-theme='dark'] {
@@ -31,6 +32,7 @@ export const GlobalStyles = createGlobalStyle`
     --card-bg: #232226;
     --card-border-color: rgba(255, 255, 255, 0.1);
     --table-bg: #232226;
+    --concept-block-bg: #f5f6fa;
   }
 
   *, *::before, *::after {
@@ -71,17 +73,16 @@ export const GlobalStyles = createGlobalStyle`
         position: fixed;
         bottom: 0;
     p{
-      color: white;
+      color: var(--text-color);
     }
     .conceptsBlock{
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+        background: var(--background-color);
         border-radius: 10px;
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
-        color: white;
+        color: var(--text-color);
         padding: 15px;
-        color: white;
         position: absolute;
         bottom: 35%;
         width: max-content;

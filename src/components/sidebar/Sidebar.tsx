@@ -13,6 +13,11 @@ export const Sidebar: React.FC = () => {
             
             <ul className='text-white list-unstyled px-3 menu-list'>
                 <li>
+                    <NavLink to="/dashboard">
+                        <User size={22} className='me-2 icon' />Dashboard
+                    </NavLink>
+                </li>
+                <li>
                     <NavLink to="/users">
                         <User size={22} className='me-2 icon' />Users
                     </NavLink>

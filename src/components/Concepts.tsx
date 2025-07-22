@@ -10,6 +10,11 @@ export const Concepts: React.FC = () => {
                     <li>Formik</li>
                     <li>Yup Validation</li>
                     <li>useNavigate</li>
+                    <li>Typescript</li>
+                    <li>useState, useEffect, useContext,<br></br> useReducer, useDispatch</li>
+                    <li>Redux with Redux Toolkit</li>
+                    <li>Firebase: data storage</li>
+                    <li>Thunk</li>
                 </ul>
                 }
         </div>
