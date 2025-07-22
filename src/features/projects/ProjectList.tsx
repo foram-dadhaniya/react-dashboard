@@ -114,7 +114,7 @@ export const ProjectList: React.FC = () => {
                   );
                 })}
               </tbody>
-            </table>
+            </Table>
           )}
         </div>
       </Card>
