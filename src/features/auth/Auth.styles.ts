@@ -13,12 +13,13 @@ export const FormWrapper = styled.div`
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    color: white;
+    color: var(--text-color);
     width: 500px;
     text-align: left;
 `
 export const InputGroup = styled.div`
     margin-bottom: 20px;
+    font-size: 15px;
     .errorMessage{
         color: #d86448;
         padding: 5px 0 0;
@@ -26,17 +27,17 @@ export const InputGroup = styled.div`
 `
 export const InputLabel = styled.label`
     margin-bottom: 10px;
-    color: white;
+    color: var(--text-color);
     display: block;
 `
 export const InputField = styled.input`
     width: 100%;
-    border: 1px solid #666666;
+    border: 1px solid var(--border-color);
     border-radius: 5px;
     background-color: transparent;
     height: 35px;
     padding: 10px;
-    color: white;
+    color: var(--text-color);
     &:focus-visible{
         outline: unset;
         box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
@@ -44,19 +45,19 @@ export const InputField = styled.input`
     &:-webkit-autofill {
     box-shadow: 0 0 0 1000px transparent inset !important;
     -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
-    -webkit-text-fill-color: white !important;
+    -webkit-text-fill-color: var(--text-color) !important;
     transition: background-color 5000s ease-in-out 0s;
   }
-  }
+  
 `
 
 export const Button = styled.button`
     width: 100%;
     height: 45px;
     padding: 12px 24px;
-    margin-top: 20px;
     border: unset;
     border-radius: 5px;
+    //background-color: #5c67f7;
     background: linear-gradient(
         135deg,
         rgba(18, 33, 213, 0.8),

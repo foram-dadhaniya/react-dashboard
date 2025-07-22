@@ -17,7 +17,7 @@ function App() {
   const theme = state.theme;
 
   useEffect(() => {
-    document.body.className = `${theme}-theme`
+    document.body.setAttribute("data-theme", theme);
   }, [theme] );
   return (
       <BrowserRouter>

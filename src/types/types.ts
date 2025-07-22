@@ -13,3 +13,7 @@ export interface ProjectInputValues {
     startDate: string,
     endDate: string
 }
+
+export interface ThemeToggleProps {
+    header?: boolean;
+  }

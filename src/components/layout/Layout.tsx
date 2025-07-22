@@ -15,9 +15,9 @@ export const Layout:React.FC = () => {
     return(
         <LayoutFrame>
             <Sidebar/>
-            <div style={{ width: 'calc(100% - 300px)' }} className="p-3">
+            <div style={{ width: 'calc(100% - 300px)' }}>
                 <Header/>
-                <main>
+                <main className="p-3">
                     <Outlet/>
                 </main>
             </div>
