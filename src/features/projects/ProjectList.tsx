@@ -9,7 +9,7 @@ import { v4 as uuidv4 } from "uuid";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { Card } from "../../styles/Card.style";
-import { Table } from "lucide-react";
+import { Table } from "../../styles/Table.style";
 
 export const ProjectList: React.FC = () => {
   const [editingProject, setEditingProject] =
