@@ -47,25 +47,36 @@ export const ProjectList: React.FC = () => {
             onSubmit={handleSubmit}
           >
             <Form>
-              <TextInput
-                label="Project Name"
-                name="projectName"
-                type="text"
-                placeholder="Enter project name"
-              ></TextInput>
-              <TextInput
-                label="Start Date"
-                name="startDate"
-                type="date"
-                placeholder="Enter start date"
-              ></TextInput>
-              <TextInput
-                label="End Date"
-                name="endDate"
-                type="date"
-                placeholder="Enter end date"
-              ></TextInput>
-              <Button type="submit">Add Project</Button>
+              <div className="row g-2">
+                <div className="col-md-6">
+                  <TextInput
+                    label="Project Name"
+                    name="projectName"
+                    type="text"
+                    placeholder="Enter project name"
+                  ></TextInput>
+                </div>
+                <div className="col-md-6">
+                  <TextInput
+                    label="Start Date"
+                    name="startDate"
+                    type="date"
+                    placeholder="Enter start date"
+                  ></TextInput>
+                </div>
+              </div>
+              <div className="row g-2">
+                <div className="col-md-6">
+                  <TextInput
+                    label="End Date"
+                    name="endDate"
+                    type="date"
+                    placeholder="Enter end date"
+                  ></TextInput>
+                </div>
+              </div>
+
+              <Button type="submit">{editingProject ? "Edit Project" : "Add Project"}</Button>
             </Form>
           </Formik>
         </div>
@@ -76,28 +87,34 @@ export const ProjectList: React.FC = () => {
           <div className="card-title mb-0">Create Project</div>
         </div>
         <div className="card-body">
-        {projects.length === 0 ? (
+          {projects.length === 0 ? (
             <p>No project added</p>
           ) : (
-            <table>
-            <tbody>
-              {projects.map((project, id) => {
-                return (
-                  <tr key={id}>
-                    <td>{project.projectName}</td>
-                    <td>{project.startDate}</td>
-                    <td>{project.endDate}</td>
-                    <td onClick={() => setEditingProject(project)}>Edit</td>
-                    <td onClick={() => dispatch(deleteProject(project.id))}>
-                      Delete
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+            <table className="table">
+              <thead>
+                <th>Name</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Edit Project</th>
+                <th>Delete Project</th>
+              </thead>
+              <tbody>
+                {projects.map((project, id) => {
+                  return (
+                    <tr key={id}>
+                      <td>{project.projectName}</td>
+                      <td>{project.startDate}</td>
+                      <td>{project.endDate}</td>
+                      <td onClick={() => setEditingProject(project)}>Edit</td>
+                      <td onClick={() => dispatch(deleteProject(project.id))}>
+                        Delete
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
           )}
-          
         </div>
       </Card>
     </>
