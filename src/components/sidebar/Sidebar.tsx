@@ -1,5 +1,5 @@
 import { SideNav } from './Sidebar.styles';
-import {  BookText, List, User } from 'lucide-react';
+import {  BookText, LayoutDashboard, List, User } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 
 
@@ -14,7 +14,7 @@ export const Sidebar: React.FC = () => {
             <ul className='text-white list-unstyled px-3 menu-list'>
                 <li>
                     <NavLink to="/dashboard">
-                        <User size={22} className='me-2 icon' />Dashboard
+                        <LayoutDashboard size={22} className='me-2 icon' />Dashboard
                     </NavLink>
                 </li>
                 <li>

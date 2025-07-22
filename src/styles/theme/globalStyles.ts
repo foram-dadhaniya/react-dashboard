@@ -84,7 +84,7 @@ export const GlobalStyles = createGlobalStyle`
         color: var(--text-color);
         padding: 15px;
         position: absolute;
-        bottom: 35%;
+        bottom: 55%;
         width: max-content;
         left: -105%;
     }
