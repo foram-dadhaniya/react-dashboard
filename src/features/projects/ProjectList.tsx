@@ -9,6 +9,7 @@ import { v4 as uuidv4 } from "uuid";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { Card } from "../../styles/Card.style";
+import { Table } from "lucide-react";
 
 export const ProjectList: React.FC = () => {
   const [editingProject, setEditingProject] =
@@ -90,7 +91,7 @@ export const ProjectList: React.FC = () => {
           {projects.length === 0 ? (
             <p>No project added</p>
           ) : (
-            <table className="table">
+            <Table className="table">
               <thead>
                 <th>Name</th>
                 <th>Start Date</th>
