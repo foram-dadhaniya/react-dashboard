@@ -12,8 +12,8 @@ import {
   deleteUserToFirebase,
 } from "./usersSlice";
 import { toast } from "react-toastify";
-import { Card } from "../../styles/Card.style";
 import { Table } from "../../styles/Table.style";
+import { Card } from "../../components/card/Card";
 
 export const UserList: React.FC = () => {
   const [editingUser, setEditingUser] = useState<UserInputValues | null>(null);
@@ -46,12 +46,8 @@ export const UserList: React.FC = () => {
 
   return (
     <>
-      <Card className="card">
-        <div className="card-header">
-          <div className="card-title mb-0">Create User</div>
-        </div>
-        <div className="card-body">
-          <Formik
+      <Card header="Create User">
+      <Formik
             initialValues={editingUser || userInitialValues}
             enableReinitialize
             onSubmit={handleUserSubmit}
@@ -96,14 +92,9 @@ export const UserList: React.FC = () => {
               <Button type="submit">{editingUser ? "Edit" : "Add"}</Button>
             </Form>
           </Formik>
-        </div>
       </Card>
-      <Card className="card">
-        <div className="card-header">
-          <div className="card-title mb-0">User List</div>
-        </div>
-        <div className="card-body">
-          {usersData.length === 0 ? (
+      <Card header="User List">
+      {usersData.length === 0 ? (
             <p>No user added</p>
           ) : (
             <Table className="table">
@@ -142,8 +133,23 @@ export const UserList: React.FC = () => {
               </tbody>
             </Table>
           )}
-        </div>
       </Card>
+      {/* <Card className="card">
+        <div className="card-header">
+          <div className="card-title mb-0">Create User</div>
+        </div>
+        <div className="card-body">
+          
+        </div>
+      </Card> */}
+      {/* <Card className="card">
+        <div className="card-header">
+          <div className="card-title mb-0">User List</div>
+        </div>
+        <div className="card-body">
+          
+        </div>
+      </Card> */}
     </>
   );
 };

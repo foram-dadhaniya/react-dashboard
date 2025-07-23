@@ -8,7 +8,7 @@ import { SignUp } from './features/auth/SignUp';
 import { Users } from './pages/Users';
 import { Projects } from './pages/Projects';
 import { Tasks } from './pages/Tasks';
-import { Layout } from './components/layout/Layout';
+import { Layout } from './layout/Layout';
 import { useTheme } from './contenxt/useTheme';
 import { useEffect } from 'react';
 

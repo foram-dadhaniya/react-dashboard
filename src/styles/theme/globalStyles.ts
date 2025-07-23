@@ -2,7 +2,22 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
+  /* 1. Root container */
   :root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 2. CSS Reset */
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* 3. Theme CSS */
+  body[data-theme='light'] {
     --background-color: #f5f6fa;
     --text-color: #61748f;
     --input-bg: #fff;
@@ -35,38 +50,37 @@ export const GlobalStyles = createGlobalStyle`
     --concept-block-bg: #f5f6fa;
   }
 
+  /* 4. CSS Reset */
   *, *::before, *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
 
+  /* 5. Body base */
   body {
-    margin: 0;
     font-family: 'Inter', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
   }
     
+  /* 6. Links */
   a {
     text-decoration: none;
     color: inherit;
   }
 
+  /* 7. Utility classes (optional) */
+  .hidden {
+    display: none !important;
+  }
+
+  
   .icon{
     color: var(--sidebar-prime-color);
   }
   
-  //theme toggle
-  .theme-toggle{
-    position: fixed;
-    z-index: 1000;
-    border-radius: 20px;
-    color: var(--text-color);
-    border: none;
-    cursor: pointer;
-    border-color: var(--border-color);
-    top: 15px;
-    right: 15px;
-  }
+
 
   .concepts{
         right: 15px;

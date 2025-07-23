@@ -1,6 +1,6 @@
 import { UserCircleIcon } from "lucide-react"
 import { HeaderTop } from "./Header.styles"
-import { ThemeToggle } from "../theme/ThemeToggle"
+import { ThemeToggle } from "../../components/theme/ThemeToggle"
 
 
 export const Header: React.FC = () => {

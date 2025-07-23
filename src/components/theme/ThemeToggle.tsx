@@ -12,7 +12,7 @@ export const ThemeToggle:React.FC<ThemeToggleProps> = ({ header }) => {
     }
     const { state, dispatch } = context;
     return(
-        <ToggleInput className="form-check form-switch theme-toggle" $header={header}>
+        <ToggleInput className="form-check form-switch" $header={header}>
             <HiddenToggleInput className="form-check-input" type="checkbox" id="themeToggleSwitch" onClick={() => dispatch({ type: 'TOGGLE_THEME'})} />
             <label className="form-check-label" htmlFor="themeToggleSwitch">{state.theme === "dark" ? <Moon size={24} className="icon" /> : <Sun size={24} className="icon" /> }</label>
         </ToggleInput>

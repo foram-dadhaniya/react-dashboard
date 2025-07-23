@@ -1,7 +1,7 @@
 // import { useSelector } from "react-redux";
-import { LayoutFrame } from "../../pages/Dashboard.style";
-import { Header } from "../header/Header";
-import { Sidebar } from "../sidebar/Sidebar";
+import { LayoutFrame } from "../pages/Dashboard.style";
+import { Header } from "./header/Header";
+import { Sidebar } from "./sidebar/Sidebar";
 // import { RootState } from "../../app/store";
 import { Outlet } from "react-router-dom";
 

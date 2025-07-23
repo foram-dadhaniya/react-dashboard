@@ -8,8 +8,8 @@ import { addProject, deleteProject, editProject } from "./projectSlice";
 import { v4 as uuidv4 } from "uuid";
 import { useSelector } from "react-redux";
 import { useState } from "react";
-import { Card } from "../../styles/Card.style";
 import { Table } from "../../styles/Table.style";
+import { Card } from "../../components/card/Card";
 
 export const ProjectList: React.FC = () => {
   const [editingProject, setEditingProject] =
@@ -37,12 +37,8 @@ export const ProjectList: React.FC = () => {
   };
   return (
     <>
-      <Card className="card">
-        <div className="card-header">
-          <div className="card-title mb-0">Create Project</div>
-        </div>
-        <div className="card-body">
-          <Formik
+      <Card header="Create Project">
+      <Formik
             initialValues={editingProject || projectInitialValues}
             enableReinitialize
             onSubmit={handleSubmit}
@@ -80,14 +76,9 @@ export const ProjectList: React.FC = () => {
               <Button type="submit">{editingProject ? "Edit Project" : "Add Project"}</Button>
             </Form>
           </Formik>
-        </div>
       </Card>
 
-      <Card className="card">
-        <div className="card-header">
-          <div className="card-title mb-0">Create Project</div>
-        </div>
-        <div className="card-body">
+      <Card header="Project List">
           {projects.length === 0 ? (
             <p>No project added</p>
           ) : (
@@ -116,7 +107,6 @@ export const ProjectList: React.FC = () => {
               </tbody>
             </Table>
           )}
-        </div>
       </Card>
     </>
   );

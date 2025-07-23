@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface UserInputValues {
     id: string,
     name: string,
@@ -16,4 +18,9 @@ export interface ProjectInputValues {
 
 export interface ThemeToggleProps {
     header?: boolean;
-  }
+}
+
+export interface CardProps {
+    header?: string;
+    children: ReactNode;
+}
